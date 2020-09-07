@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module Authenticable
   def current_user
     return @current_user if @current_user

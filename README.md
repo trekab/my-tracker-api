@@ -25,6 +25,9 @@ Then you browse to the folder and exucute the following commands
 - run `rails db:migrate`
 - run `rails s` and test out the `endpoints` from your preferred client.
 
+### To run tests:
+- run `rails test`
+
 ### Implemented endpoints:
 - `POST /api/v1/users`
 - `GET /api/v1/users/:id`
