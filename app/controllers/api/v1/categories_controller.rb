@@ -1,31 +1,31 @@
 class Api::V1::CategoriesController < ApplicationController
   before_action :check_admin, only: %i[create update destroy]
+  before_action :set_category, only: %i[update destroy]
 
   def index
-    render json: Category.all
+    @categories = Category.all
+    render json: CategorySerializer.new(@categories).serializable_hash
   end
 
   def create
-    @category = current_user.categories.build(category_params)
+    category = current_user.categories.build(category_params)
 
-    if @category.save
-      render json: @category, status: :created
+    if category.save
+      render json: CategorySerializer.new(category).serializable_hash, status: :created
     else
       render json: @category.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    @category = Category.find(params[:id])
     if @category.update(category_params)
-      render json: @category
+      render json: CategorySerializer.new(@category).serializable_hash
     else
       render json: @category.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.destroy
     head 204
   end
@@ -34,5 +34,9 @@ class Api::V1::CategoriesController < ApplicationController
 
     def category_params
       params.require(:category).permit(:name)
+    end
+
+    def set_category
+      @category = Category.find(params[:id])
     end
 end
