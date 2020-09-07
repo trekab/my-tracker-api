@@ -3,17 +3,18 @@ class Api::V1::MeasurementsController < ApplicationController
   before_action :check_login, only: %i[create update destroy]
 
   def index
-    render json: Measurement.all
+    @measurements = Measurement.all
+    render json: MeasurementSerializer.new(@measurements).serializable_hash
   end
 
   def show
-    render json: @measurement
+    render json: MeasurementSerializer.new(@measurement).serializable_hash
   end
 
   def create
     measurement = Measurement.create(measurement_params)
     if measurement.save
-      render json: measurement, status: :created
+      render json: MeasurementSerializer.new(measurement).serializable_hash, status: :created
     else
       render json: { errors: measurement.errors }, status: :unprocessable_entity
     end
@@ -21,7 +22,7 @@ class Api::V1::MeasurementsController < ApplicationController
 
   def update
     if @measurement.update(measurement_params)
-      render json: @measurement
+      render json: MeasurementSerializer.new(@measurement).serializable_hash
     else
       render json: @measurement.errors, status: :unprocessable_entity
     end

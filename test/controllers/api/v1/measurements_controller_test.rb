@@ -15,7 +15,9 @@ class Api::V1::MeasurementsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     json_response = JSON.parse(self.response.body)
-    assert_equal @measurement.id, json_response['id']
+    assert_equal @measurement.product_id, json_response['data']['attributes']['product_id']
+    assert_equal @measurement.category_id, json_response['data']['attributes']['category_id']
+    assert_equal @measurement.total, json_response['data']['attributes']['total']
   end
 
   test 'should create measurement' do
