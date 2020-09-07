@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://my-tracker-api.herokuapp.com/)
+[Live Demo Link](https://trekab-tracker-api.herokuapp.com/)
 
 
 ## Getting Started
