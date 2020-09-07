@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :tokens, only: [:create]
       resources :products
       resources :categories, only: %i[index create update destroy]
+      resources :measurements
     end
   end
 end

@@ -2,10 +2,10 @@
 
 one:
   total: 1
-  user: one
+  product: one
   category: one
 
 two:
   total: 1
-  user: two
+  product: two
   category: two
