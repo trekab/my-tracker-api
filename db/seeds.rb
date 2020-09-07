@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Product.delete_all
 User.delete_all
 
