@@ -42,4 +42,22 @@ class Api::V1::CategoriesControllerTest < ActionDispatch::IntegrationTest
     as: :json
     assert_response :forbidden
   end
+
+  test "should destroy category" do
+    assert_difference('Category.count', -1) do
+      delete api_v1_category_url(@category), 
+        headers: { Authorization: JsonWebToken.encode(user_id: @category.user_id) },
+        as: :json
+    end
+    assert_response :no_content
+  end
+
+  test "should forbid destroy category" do
+    assert_no_difference('Category.count') do
+      delete api_v1_user_url(@category), 
+        headers: { Authorization: JsonWebToken.encode(user_id: users(:two).id) },
+        as: :json
+    end
+    assert_response :forbidden
+  end
 end

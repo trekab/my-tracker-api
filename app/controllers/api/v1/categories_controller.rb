@@ -1,5 +1,5 @@
 class Api::V1::CategoriesController < ApplicationController
-  before_action :check_admin, only: %i[create update]
+  before_action :check_admin, only: %i[create update destroy]
 
   def index
     render json: Category.all
@@ -22,6 +22,12 @@ class Api::V1::CategoriesController < ApplicationController
     else
       render json: @category.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    head 204
   end
 
   private
