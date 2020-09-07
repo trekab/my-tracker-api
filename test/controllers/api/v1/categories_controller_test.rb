@@ -41,7 +41,7 @@ module Api
       end
 
       test 'should forbid update category' do
-        patch api_v1_category_url(@category), params: { category: { name: @category.name} },
+        patch api_v1_category_url(@category), params: { category: { name: @category.name } },
                                               headers: { Authorization: JsonWebToken.encode(user_id: users(:two).id) },
                                               as: :json
         assert_response :forbidden
