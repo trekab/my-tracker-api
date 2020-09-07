@@ -2,6 +2,8 @@
 
 one:
   name: oneMyString
+  user: one
 
 two:
   name: twoMyString
+  user: two

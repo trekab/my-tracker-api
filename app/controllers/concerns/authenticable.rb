@@ -10,7 +10,11 @@ module Authenticable
   end
 
   protected
-  def check_login
-    head :forbidden unless self.current_user
-  end
+    def check_login
+      head :forbidden unless self.current_user
+    end
+
+    def check_admin
+      head :forbidden unless self.current_user.admin
+    end
 end

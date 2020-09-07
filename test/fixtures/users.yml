@@ -3,7 +3,7 @@
 one:
   email: one@one.org
   password_digest: <%= BCrypt::Password.create('g00d_pa$$') %>
-  admin: false
+  admin: true
 
 two:
   email: two@two.rog
