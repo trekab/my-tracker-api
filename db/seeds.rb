@@ -15,3 +15,6 @@ User.delete_all
     puts "Created a brand new product: #{product.title}"
   end
 end
+
+admin_user = User.create! email: "admin-testing@testmail.org", password: 'password', admin: true
+puts "Created an admin user: #{admin_user.email}"
