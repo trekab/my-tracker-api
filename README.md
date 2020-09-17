@@ -11,7 +11,7 @@
 [Live Demo Link](https://trekab-tracker-api.herokuapp.com/)
 
 ## Documentation
-[Documentation](https://trekab.github.io/my-tracker-api-docs/)
+[Documentation Link](https://trekab.github.io/my-tracker-api-docs/)
 
 
 ## Getting Started
