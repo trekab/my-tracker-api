@@ -2,6 +2,8 @@
 
 > This is an API for a `sales tracker` client that is aimed at enabling users to track various aspects about their products/sales e.g. orders, inventory, number of sales made, e.t.c. 
 
+![screenshot](./sales-tracker-api-docs.png)
+
 ## Built With
 
 - Ruby on Rails
