@@ -8,10 +8,6 @@
 
 - Ruby on Rails
 
-## Live Demo
-
-[Live Demo Link](https://trekab-tracker-api.herokuapp.com/)
-
 ## Documentation
 [Documentation Link](https://trekab.github.io/my-tracker-api-docs/)
 
