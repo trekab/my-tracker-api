@@ -29,26 +29,6 @@ Then you browse to the folder and exucute the following commands
 ### To run tests:
 - run `rails test`
 
-### Implemented endpoints:
-- `POST /api/v1/users`
-- `GET /api/v1/users/:id`
-- `UPDATE /api/v1/users/:id`
-- `DELETE /api/v1/users/:id`
-- `POST /api/v1/tokens`
-- `POST /api/v1/products`
-- `GET /api/v1/products/:id`
-- `UPDATE /api/v1/products/:id`
-- `DELETE /api/v1/products/:id`
-- `POST /api/v1/categories`
-- `GET /api/v1/categories`
-- `UPDATE /api/v1/categories/:id`
-- `DELETE /api/v1/categories/:id`
-- `POST /api/v1/measurements`
-- `GET /api/v1/measurements`
-- `UPDATE /api/v1/measurements/:id`
-- `DELETE /api/v1/measurements/:id`
-
-
 ## Authors
 
 👤 **Treasure Kabareebe**
